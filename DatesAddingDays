@@ -1,0 +1,3 @@
+const FechaMaxima = new Date();
+FechaMaxima.setDate(FechaMaxima.getDate() + 6);
+FechaMaxima.toISOString().substring(0, 10);
