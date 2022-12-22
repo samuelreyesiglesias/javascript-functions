@@ -1,0 +1,37 @@
+¿Es este el tipo de salida que estás buscando?
+
+for(var b in window) { 
+  if(window.hasOwnProperty(b)) console.log(b); 
+}
+Esto enumerará todo lo disponible en el windowobjeto (todas las funciones y variables, por ejemplo, $y jQueryen esta página, etc.). Sin embargo, esta es toda una lista; no estoy seguro de lo útil que es ...
+
+De lo contrario, simplemente hazlo windowy empieza a bajar por su árbol
+
+window
+Esto le dará DOMWindowun objeto expandible / explorable.
+
+
+------------------------------------------
+
+Abra la consola y luego ingrese:
+
+keys(window) ver variables
+dir(window) ver objetos
+
+dir(window)no funciona en Firefox (sí, sé que este hilo era sobre Chrome), 
+pero key(window)funciona en Firefox
+
+
+--------------------------------------------
+
+Si desea excluir todas las propiedades estándar del objeto de ventana y ver las variables globales específicas de la aplicación, esto las imprimirá en la consola de Chrome:
+
+(function(){var standardGlobals=["top","window","location","external","chrome","document","inlineCSS","target","width","height","canvas","data","DOMURL","img","svg","ctx","url","w","a","speechSynthesis","webkitNotifications","localStorage","sessionStorage","applicationCache","webkitStorageInfo","indexedDB","webkitIndexedDB","crypto","CSS","performance","console","devicePixelRatio","styleMedia","parent","opener","frames","self","defaultstatus","defaultStatus","status","name","length","closed","pageYOffset","pageXOffset","scrollY","scrollX","screenTop","screenLeft","screenY","screenX","innerWidth","innerHeight","outerWidth","outerHeight","offscreenBuffering","frameElement","clientInformation","navigator","toolbar","statusbar","scrollbars","personalbar","menubar","locationbar","history","screen","postMessage","close","blur","focus","ondeviceorientation","ondevicemotion","onunload","onstorage","onresize","onpopstate","onpageshow","onpagehide","ononline","onoffline","onmessage","onhashchange","onbeforeunload","onwaiting","onvolumechange","ontimeupdate","onsuspend","onsubmit","onstalled","onshow","onselect","onseeking","onseeked","onscroll","onreset","onratechange","onprogress","onplaying","onplay","onpause","onmousewheel","onmouseup","onmouseover","onmouseout","onmousemove","onmouseleave","onmouseenter","onmousedown","onloadstart","onloadedmetadata","onloadeddata","onload","onkeyup","onkeypress","onkeydown","oninvalid","oninput","onfocus","onerror","onended","onemptied","ondurationchange","ondrop","ondragstart","ondragover","ondragleave","ondragenter","ondragend","ondrag","ondblclick","oncuechange","oncontextmenu","onclose","onclick","onchange","oncanplaythrough","oncanplay","oncancel","onblur","onabort","onwheel","onwebkittransitionend","onwebkitanimationstart","onwebkitanimationiteration","onwebkitanimationend","ontransitionend","onsearch","getSelection","print","stop","open","showModalDialog","alert","confirm","prompt","find","scrollBy","scrollTo","scroll","moveBy","moveTo","resizeBy","resizeTo","matchMedia","requestAnimationFrame","cancelAnimationFrame","webkitRequestAnimationFrame","webkitCancelAnimationFrame","webkitCancelRequestAnimationFrame","captureEvents","releaseEvents","atob","btoa","setTimeout","clearTimeout","setInterval","clearInterval","TEMPORARY","PERSISTENT","getComputedStyle","getMatchedCSSRules","webkitConvertPointFromPageToNode","webkitConvertPointFromNodeToPage","webkitRequestFileSystem","webkitResolveLocalFileSystemURL","openDatabase","addEventListener","removeEventListener","dispatchEvent"];
+    var appSpecificGlobals={};
+    for (var w in window){
+        if (standardGlobals.indexOf(w)==-1) appSpecificGlobals[w]=window[w];
+    }
+    console.log(appSpecificGlobals);})()
+
+
+--------------------------------------------
