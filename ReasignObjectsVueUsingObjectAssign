@@ -1,0 +1,9 @@
+this.registro.plantillaDetalle[key] = Object.assign({}, this.registro.plantillaDetalle[key],
+{
+    'nombre_nueva_prpiedad': valor
+})
+
+app.StockLineList[index] = Object.assign({}, app.StockLineList[index],
+{
+    'Stock': result
+})
