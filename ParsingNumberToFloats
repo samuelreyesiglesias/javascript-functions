@@ -1,0 +1,3 @@
+
+doble parseFloat al momento de convertir tipos string o numeros con decimales a numero decimal:
+parseFloat(parseFloat("9.55656").toFixed(2))
