@@ -1,0 +1,5 @@
+   const getSrcOrigin = () => new URL(document.currentScript.src).origin;
+    const url = new URL(getSrcOrigin);
+    console.log(url.host);
+    console.log(url.origin);
+    console.log(url.protocol);
