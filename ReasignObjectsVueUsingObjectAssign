@@ -7,3 +7,6 @@ app.StockLineList[index] = Object.assign({}, app.StockLineList[index],
 {
     'Stock': result
 })
+
+
+ app.StockLineList[index] = Object.assign({}, app.StockLineList[index],{'Stock': result});
