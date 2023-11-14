@@ -1,5 +1,5 @@
 # javascript-functions
-personal javascript functions
+//personal javascript functions
 
 value = null;
 a_variable = value ?? 100;
